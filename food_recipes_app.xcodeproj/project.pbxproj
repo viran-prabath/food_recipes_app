@@ -12,16 +12,34 @@
 		AD7256722980610C00151C54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7256712980610C00151C54 /* ViewController.swift */; };
 		AD7256772980611700151C54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD7256762980611700151C54 /* Assets.xcassets */; };
 		AD72567A2980611700151C54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD7256782980611700151C54 /* LaunchScreen.storyboard */; };
+		ADE16A012987B82000976A5A /* HomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE16A002987B82000976A5A /* HomeTabBarViewController.swift */; };
+		ADE16A032987BB4B00976A5A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE16A022987BB4B00976A5A /* HomeViewController.swift */; };
+		ADE16A052987BB9600976A5A /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE16A042987BB9600976A5A /* FavoriteViewController.swift */; };
+		ADE16A072987BBC300976A5A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE16A062987BBC300976A5A /* SearchViewController.swift */; };
+		ADE16A092987BC1F00976A5A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE16A082987BC1F00976A5A /* ProfileViewController.swift */; };
+		ADE16A0C2987C00900976A5A /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE16A0B2987C00900976A5A /* CollectionViewTableViewCell.swift */; };
+		ADE16A0E2987D12700976A5A /* TableHeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE16A0D2987D12700976A5A /* TableHeaderUIView.swift */; };
+		ADE16A132987D2C900976A5A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE16A122987D2C900976A5A /* Extensions.swift */; };
+		ADE16A152987D36F00976A5A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE16A142987D36F00976A5A /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AD72566A2980610C00151C54 /* food_recipes_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = food_recipes_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD72566A2980610C00151C54 /* Tasty Foods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tasty Foods.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD72566D2980610C00151C54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD72566F2980610C00151C54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AD7256712980610C00151C54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AD7256762980611700151C54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD7256792980611700151C54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD72567B2980611700151C54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADE16A002987B82000976A5A /* HomeTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewController.swift; sourceTree = "<group>"; };
+		ADE16A022987BB4B00976A5A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		ADE16A042987BB9600976A5A /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		ADE16A062987BBC300976A5A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		ADE16A082987BC1F00976A5A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		ADE16A0B2987C00900976A5A /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
+		ADE16A0D2987D12700976A5A /* TableHeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderUIView.swift; sourceTree = "<group>"; };
+		ADE16A122987D2C900976A5A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		ADE16A142987D36F00976A5A /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +64,7 @@
 		AD72566B2980610C00151C54 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AD72566A2980610C00151C54 /* food_recipes_app.app */,
+				AD72566A2980610C00151C54 /* Tasty Foods.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,14 +72,47 @@
 		AD72566C2980610C00151C54 /* food_recipes_app */ = {
 			isa = PBXGroup;
 			children = (
+				ADE16A0F2987D24F00976A5A /* Resources */,
+				ADE16A0A2987BF5F00976A5A /* Views */,
+				ADE169FF2987B68300976A5A /* Controllers */,
 				AD72566D2980610C00151C54 /* AppDelegate.swift */,
 				AD72566F2980610C00151C54 /* SceneDelegate.swift */,
 				AD7256712980610C00151C54 /* ViewController.swift */,
 				AD7256762980611700151C54 /* Assets.xcassets */,
 				AD7256782980611700151C54 /* LaunchScreen.storyboard */,
 				AD72567B2980611700151C54 /* Info.plist */,
+				ADE16A002987B82000976A5A /* HomeTabBarViewController.swift */,
 			);
 			path = food_recipes_app;
+			sourceTree = "<group>";
+		};
+		ADE169FF2987B68300976A5A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ADE16A022987BB4B00976A5A /* HomeViewController.swift */,
+				ADE16A042987BB9600976A5A /* FavoriteViewController.swift */,
+				ADE16A062987BBC300976A5A /* SearchViewController.swift */,
+				ADE16A082987BC1F00976A5A /* ProfileViewController.swift */,
+				ADE16A142987D36F00976A5A /* SignInViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		ADE16A0A2987BF5F00976A5A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ADE16A0B2987C00900976A5A /* CollectionViewTableViewCell.swift */,
+				ADE16A0D2987D12700976A5A /* TableHeaderUIView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ADE16A0F2987D24F00976A5A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ADE16A122987D2C900976A5A /* Extensions.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -81,7 +132,7 @@
 			);
 			name = food_recipes_app;
 			productName = food_recipes_app;
-			productReference = AD72566A2980610C00151C54 /* food_recipes_app.app */;
+			productReference = AD72566A2980610C00151C54 /* Tasty Foods.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -134,8 +185,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADE16A032987BB4B00976A5A /* HomeViewController.swift in Sources */,
+				ADE16A072987BBC300976A5A /* SearchViewController.swift in Sources */,
 				AD7256722980610C00151C54 /* ViewController.swift in Sources */,
+				ADE16A012987B82000976A5A /* HomeTabBarViewController.swift in Sources */,
 				AD72566E2980610C00151C54 /* AppDelegate.swift in Sources */,
+				ADE16A0C2987C00900976A5A /* CollectionViewTableViewCell.swift in Sources */,
+				ADE16A0E2987D12700976A5A /* TableHeaderUIView.swift in Sources */,
+				ADE16A052987BB9600976A5A /* FavoriteViewController.swift in Sources */,
+				ADE16A152987D36F00976A5A /* SignInViewController.swift in Sources */,
+				ADE16A092987BC1F00976A5A /* ProfileViewController.swift in Sources */,
+				ADE16A132987D2C900976A5A /* Extensions.swift in Sources */,
 				AD7256702980610C00151C54 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,7 +339,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nibmtest.NIBM-Test.food-recipes-app";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Tasty Foods";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -296,7 +356,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nibmtest.NIBM-Test.food-recipes-app";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Tasty Foods";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
