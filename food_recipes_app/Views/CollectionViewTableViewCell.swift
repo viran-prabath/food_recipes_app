@@ -11,6 +11,8 @@ import UIKit
 class CollectionViewTableViewCell: UITableViewCell {
 
     static let Identifier = "CollectionViewTableCell"
+    
+    private var foodtitle: [FoodsDataModels] = [FoodsDataModels]()
         
     private let collectionView: UICollectionView = {
         
@@ -19,7 +21,7 @@ class CollectionViewTableViewCell: UITableViewCell {
         layout.scrollDirection = .horizontal
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(FoodTitleCollectionViewCell.self, forCellWithReuseIdentifier: FoodTitleCollectionViewCell.identifier)
         return collectionView
     }()
     
@@ -40,6 +42,15 @@ class CollectionViewTableViewCell: UITableViewCell {
         super.layoutSubviews()
         collectionView.frame = contentView.bounds
     }
+    
+    public func configure(with foodtitle: [FoodsDataModels]) {
+        self.foodtitle = foodtitle
+        
+        DispatchQueue.main.async {
+            [weak self] in
+            self?.collectionView.reloadData()
+        }
+    }
 
 }
 
@@ -47,12 +58,20 @@ extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionVie
 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .green
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FoodTitleCollectionViewCell.identifier, for: indexPath) as? FoodTitleCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        
+        guard let model = foodtitle[indexPath.row].imageUrl else {
+            return UICollectionViewCell()
+        }
+        cell.configure(with: model)
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return foodtitle.count
     }
 }

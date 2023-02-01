@@ -8,9 +8,19 @@
 
 import UIKit
 
+enum Sections: Int {
+    case ChineseFoods = 0
+    case IndianFoods = 1
+    case ItalianFoods = 2
+    case JapaneseFoods = 3
+    case ThaiFoods = 4
+    case AmericanFoods = 5
+}
+
+
 class HomeViewController: UIViewController {
 
-let SectionTitleNames: [String] = ["Breakfast", "Lunch", "Dinner", "Favorite Foods"]
+let SectionTitleNames: [String] = ["Chinese Foods", "Indian Foods", "Italian Foods", "Japanese Food", "Thai Foods", "American Foods"]
     
     private let HomeDataTable: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
@@ -48,33 +58,6 @@ let SectionTitleNames: [String] = ["Breakfast", "Lunch", "Dinner", "Favorite Foo
         HomeDataTable.dataSource = self
         configureNavBar()
         
-//        //Banner Constraint
-//        view.addSubview(bannerView)
-//        bannerView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-//        bannerView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-//        bannerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.35).isActive = true
-//
-//        //Set Image to Banner
-//        bannerView.addSubview(MainBanner)
-//        bannerView.clipsToBounds = true
-//        MainBanner.heightAnchor.constraint(equalTo: bannerView.heightAnchor).isActive = true
-//        MainBanner.widthAnchor.constraint(equalTo: bannerView.widthAnchor).isActive = true
-//
-//        //Set Content View
-//        view.addSubview(ContentView)
-//
-//        ContentView.topAnchor.constraint(equalTo: bannerView.bottomAnchor, constant: -30).isActive = true
-//        ContentView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-//        ContentView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
-//
-//
-//
-//        //Set Tabele To Content View
-//        ContentView.addSubview(HomeDataTable)
-//        HomeDataTable.heightAnchor.constraint(equalTo: ContentView.heightAnchor).isActive = true
-//        HomeDataTable.widthAnchor.constraint(equalTo: ContentView.widthAnchor).isActive = true
-//        HomeDataTable.topAnchor.constraint(equalTo: ContentView.topAnchor, constant: 30).isActive = true
-//        HomeDataTable.tableFooterView = UIView()
         
         let headerView = TableHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 400))
         HomeDataTable.tableHeaderView = headerView
@@ -90,6 +73,8 @@ let SectionTitleNames: [String] = ["Breakfast", "Lunch", "Dinner", "Favorite Foo
         super.viewDidLayoutSubviews()
         HomeDataTable.frame = view.bounds
     }
+    
+
 
 }
 
@@ -107,6 +92,30 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
          guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionViewTableViewCell.Identifier, for: indexPath) as? CollectionViewTableViewCell else {
                    return UITableViewCell()
                }
+        
+        switch indexPath.section {
+            
+        case Sections.ChineseFoods.rawValue:
+            
+            API.shared.getChineseFoodData { result in
+                switch result {
+                case.success(let foodcuisine):
+                    cell.configure(with: foodcuisine)
+                case.failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+            
+            
+            
+//        case Sections.IndianFoods.rawValue
+//        case Sections.ItalianFoods.rawValue
+//        case Sections.JapaneseFoods.rawValue
+//        case Sections.ThaiFoods.rawValue
+//        case Sections.AmericanFoods.rawValue
+        default:
+            return UITableViewCell()
+        }
         return cell
     }
     
@@ -115,7 +124,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
+        return 35
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {

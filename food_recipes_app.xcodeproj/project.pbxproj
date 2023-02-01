@@ -21,6 +21,10 @@
 		ADE16A0E2987D12700976A5A /* TableHeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE16A0D2987D12700976A5A /* TableHeaderUIView.swift */; };
 		ADE16A132987D2C900976A5A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE16A122987D2C900976A5A /* Extensions.swift */; };
 		ADE16A152987D36F00976A5A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE16A142987D36F00976A5A /* SignInViewController.swift */; };
+		ADE47074298AD3A600B0EFA0 /* Foods.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE47073298AD3A600B0EFA0 /* Foods.swift */; };
+		ADE4707B298ADFC500B0EFA0 /* FoodTitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4707A298ADFC500B0EFA0 /* FoodTitleCollectionViewCell.swift */; };
+		ADE4B1B1298968EC002C4A97 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4B1B0298968EC002C4A97 /* API.swift */; };
+		ADE4B1B429896E7C002C4A97 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4B1B329896E7C002C4A97 /* Title.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		ADE16A0D2987D12700976A5A /* TableHeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderUIView.swift; sourceTree = "<group>"; };
 		ADE16A122987D2C900976A5A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ADE16A142987D36F00976A5A /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		ADE47073298AD3A600B0EFA0 /* Foods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foods.swift; sourceTree = "<group>"; };
+		ADE4707A298ADFC500B0EFA0 /* FoodTitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTitleCollectionViewCell.swift; sourceTree = "<group>"; };
+		ADE4B1B0298968EC002C4A97 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		ADE4B1B329896E7C002C4A97 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +80,8 @@
 		AD72566C2980610C00151C54 /* food_recipes_app */ = {
 			isa = PBXGroup;
 			children = (
+				ADE4B1B229896E66002C4A97 /* Models */,
+				ADE4B1AF298968A8002C4A97 /* Managers */,
 				ADE16A0F2987D24F00976A5A /* Resources */,
 				ADE16A0A2987BF5F00976A5A /* Views */,
 				ADE169FF2987B68300976A5A /* Controllers */,
@@ -103,6 +113,7 @@
 			children = (
 				ADE16A0B2987C00900976A5A /* CollectionViewTableViewCell.swift */,
 				ADE16A0D2987D12700976A5A /* TableHeaderUIView.swift */,
+				ADE4707A298ADFC500B0EFA0 /* FoodTitleCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -113,6 +124,23 @@
 				ADE16A122987D2C900976A5A /* Extensions.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		ADE4B1AF298968A8002C4A97 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				ADE4B1B0298968EC002C4A97 /* API.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		ADE4B1B229896E66002C4A97 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ADE4B1B329896E7C002C4A97 /* Title.swift */,
+				ADE47073298AD3A600B0EFA0 /* Foods.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +159,8 @@
 			dependencies = (
 			);
 			name = food_recipes_app;
+			packageProductDependencies = (
+			);
 			productName = food_recipes_app;
 			productReference = AD72566A2980610C00151C54 /* Tasty Foods.app */;
 			productType = "com.apple.product-type.application";
@@ -159,6 +189,8 @@
 				Base,
 			);
 			mainGroup = AD7256612980610C00151C54;
+			packageReferences = (
+			);
 			productRefGroup = AD72566B2980610C00151C54 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -185,14 +217,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADE47074298AD3A600B0EFA0 /* Foods.swift in Sources */,
 				ADE16A032987BB4B00976A5A /* HomeViewController.swift in Sources */,
 				ADE16A072987BBC300976A5A /* SearchViewController.swift in Sources */,
+				ADE4B1B429896E7C002C4A97 /* Title.swift in Sources */,
 				AD7256722980610C00151C54 /* ViewController.swift in Sources */,
 				ADE16A012987B82000976A5A /* HomeTabBarViewController.swift in Sources */,
 				AD72566E2980610C00151C54 /* AppDelegate.swift in Sources */,
+				ADE4707B298ADFC500B0EFA0 /* FoodTitleCollectionViewCell.swift in Sources */,
 				ADE16A0C2987C00900976A5A /* CollectionViewTableViewCell.swift in Sources */,
 				ADE16A0E2987D12700976A5A /* TableHeaderUIView.swift in Sources */,
 				ADE16A052987BB9600976A5A /* FavoriteViewController.swift in Sources */,
+				ADE4B1B1298968EC002C4A97 /* API.swift in Sources */,
 				ADE16A152987D36F00976A5A /* SignInViewController.swift in Sources */,
 				ADE16A092987BC1F00976A5A /* ProfileViewController.swift in Sources */,
 				ADE16A132987D2C900976A5A /* Extensions.swift in Sources */,
