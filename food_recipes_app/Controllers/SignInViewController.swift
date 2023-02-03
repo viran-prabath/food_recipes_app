@@ -54,7 +54,7 @@ class SignInViewController: UIViewController {
             let viewHolderMain : UIStackView = {
                 let stack = UIStackView()
                 stack.axis = .vertical
-                stack.spacing = 10
+                stack.spacing = 20
                 stack.alignment = .center
                 stack.translatesAutoresizingMaskIntoConstraints = false
                 return stack
@@ -71,23 +71,44 @@ class SignInViewController: UIViewController {
             btn.setTitleColor(.white, for: .normal)
             btn.frame = CGRect(x: 15, y: -50, width: 300, height: 500)
             btn.backgroundColor = UIColor.blue
+            btn.layer.borderWidth = 1
+            btn.layer.borderColor = UIColor.black.cgColor
             //btn.frame = CGRect(x: 10, y: 50, width: 100, height: 30)
             btn.addTarget(self, action: #selector(pressed), for: .touchUpInside)
             return btn
         }()
-            
-        //    let logoImage : UIImageView = {
-        //        let image = UIImageView(image: UIImage(named: "apple"))
-        //        image.translatesAutoresizingMaskIntoConstraints = false
-        //        image.contentMode = .scaleToFill
-        //        return image
-        //    }()
+    
+        let btnSignUp : UIButton = {
+            let btn = UIButton()
+            btn.translatesAutoresizingMaskIntoConstraints = false
+            btn.heightAnchor.constraint(equalToConstant: 40).isActive = true
+            btn.widthAnchor.constraint(equalToConstant: 300).isActive = true
+            btn.layer.cornerRadius = 20
+            btn.setTitle("Sign Up", for: .normal)
+            btn.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
+            btn.setTitleColor(.white, for: .normal)
+            btn.frame = CGRect(x: 15, y: -50, width: 300, height: 500)
+            btn.backgroundColor = UIColor.gray
+            btn.layer.borderWidth = 1
+            btn.layer.borderColor = UIColor.black.cgColor
+            //btn.frame = CGRect(x: 10, y: 50, width: 100, height: 30)
+            btn.addTarget(self, action: #selector(goToNextPage), for: .touchUpInside)
+            return btn
+        }()
+    
+    
+       
         
            @objc func pressed() {
             let alert = UIAlertController(title: "Alert", message: "Hi Foodies", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
            }
+    
+            @objc func goToNextPage() {
+                    let signUp = ProfileViewController()
+                    show(signUp, sender: self)
+                }
             
             func assignbackground(){
                 let background = UIImage(named: "signinbackground")
@@ -110,18 +131,17 @@ class SignInViewController: UIViewController {
                 apperence.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
                 navigationItem.standardAppearance = apperence
                 self.navigationController?.navigationBar.prefersLargeTitles = true
-                titleLabel.text = "Hello Again!"
-                descriptionLabel.text = "Welcome back you've been missed!"
+                titleLabel.text = "Login"
+                descriptionLabel.text = "Welcome back to Tasty Foods Recepies!"
                 txtusername.placeholder = "Username"
                 txtpassword.placeholder = "Password"
-                
                 
                 viewHolderMain.insertArrangedSubview(titleLabel, at: 0)
                 viewHolderMain.insertArrangedSubview(descriptionLabel, at: 1)
                 viewHolderMain.insertArrangedSubview(txtusername, at: 2)
                 viewHolderMain.insertArrangedSubview(txtpassword, at: 3)
                 viewHolderMain.insertArrangedSubview(btnSignIn, at: 4)
-                
+                viewHolderMain.insertArrangedSubview(btnSignUp, at: 5)
                 view.addSubview(viewHolderMain)
                 setupConstraint()
                 
@@ -135,13 +155,6 @@ class SignInViewController: UIViewController {
                     viewHolderMain.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 110).isActive = true
                     viewHolderMain.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
                     viewHolderMain.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-                    
-                    
-    //                txtusername.topAnchor.constraint(equalTo: viewHolderMain.bottomAnchor, constant: 20).isActive = true
-    //                txtusername.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-    //                txtusername.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-    //                txtusername.heightAnchor.constraint(equalTo: view.heightAnchor, constant: 40).isActive = true
-                    
             }
 
 }

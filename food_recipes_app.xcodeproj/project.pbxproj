@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,9 @@
 		ADE4707B298ADFC500B0EFA0 /* FoodTitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4707A298ADFC500B0EFA0 /* FoodTitleCollectionViewCell.swift */; };
 		ADE4B1B1298968EC002C4A97 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4B1B0298968EC002C4A97 /* API.swift */; };
 		ADE4B1B429896E7C002C4A97 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4B1B329896E7C002C4A97 /* Title.swift */; };
+		C192C79F298D05AF001A442E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C192C79E298D05AD001A442E /* User.swift */; };
+		C1DAD544298C96E400C2A62C /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = C1DAD543298C96E400C2A62C /* SDWebImage */; };
+		C1DAD546298C96E400C2A62C /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C1DAD545298C96E400C2A62C /* SDWebImageMapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,7 @@
 		ADE4707A298ADFC500B0EFA0 /* FoodTitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		ADE4B1B0298968EC002C4A97 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		ADE4B1B329896E7C002C4A97 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
+		C192C79E298D05AD001A442E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1DAD546298C96E400C2A62C /* SDWebImageMapKit in Frameworks */,
+				C1DAD544298C96E400C2A62C /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +145,7 @@
 			children = (
 				ADE4B1B329896E7C002C4A97 /* Title.swift */,
 				ADE47073298AD3A600B0EFA0 /* Foods.swift */,
+				C192C79E298D05AD001A442E /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -160,6 +167,8 @@
 			);
 			name = food_recipes_app;
 			packageProductDependencies = (
+				C1DAD543298C96E400C2A62C /* SDWebImage */,
+				C1DAD545298C96E400C2A62C /* SDWebImageMapKit */,
 			);
 			productName = food_recipes_app;
 			productReference = AD72566A2980610C00151C54 /* Tasty Foods.app */;
@@ -181,7 +190,7 @@
 				};
 			};
 			buildConfigurationList = AD7256652980610C00151C54 /* Build configuration list for PBXProject "food_recipes_app" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -190,6 +199,7 @@
 			);
 			mainGroup = AD7256612980610C00151C54;
 			packageReferences = (
+				C1DAD542298C96E400C2A62C /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = AD72566B2980610C00151C54 /* Products */;
 			projectDirPath = "";
@@ -224,6 +234,7 @@
 				AD7256722980610C00151C54 /* ViewController.swift in Sources */,
 				ADE16A012987B82000976A5A /* HomeTabBarViewController.swift in Sources */,
 				AD72566E2980610C00151C54 /* AppDelegate.swift in Sources */,
+				C192C79F298D05AF001A442E /* User.swift in Sources */,
 				ADE4707B298ADFC500B0EFA0 /* FoodTitleCollectionViewCell.swift in Sources */,
 				ADE16A0C2987C00900976A5A /* CollectionViewTableViewCell.swift in Sources */,
 				ADE16A0E2987D12700976A5A /* TableHeaderUIView.swift in Sources */,
@@ -420,6 +431,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C1DAD542298C96E400C2A62C /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C1DAD543298C96E400C2A62C /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1DAD542298C96E400C2A62C /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		C1DAD545298C96E400C2A62C /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1DAD542298C96E400C2A62C /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AD7256622980610C00151C54 /* Project object */;
 }

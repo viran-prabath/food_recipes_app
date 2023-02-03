@@ -15,7 +15,9 @@ class FoodTitleCollectionViewCell: UICollectionViewCell {
     
     private let foodImagePoster: UIImageView = {
         let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
+        imageView.frame = CGRect(x: 0, y: 0, width: 140, height: 200)
         return imageView
     }()
     

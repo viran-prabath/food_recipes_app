@@ -37,5 +37,36 @@ class API {
         
         task.resume()
     }
+    
+    
+    func login(username: String, password: String, completion: @escaping (Result<[UserDataModels], Error>) -> Void) {
+            // Define the API endpoint
+            guard let url = URL(string: "\(Constants.baseURL)/user/email/") else {return}
+            // Create the request with the login parameters
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+            let parameters = "username=\(username)&password=\(password)"
+            request.httpBody = parameters.data(using: .utf8)
+            
+            // Send the request with URLSession
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    completion(.failure(error))
+                    return
+                }
+                
+                if let data = data {
+                    // Parse the response data to determine if the login was successful
+                    // ...
+                    
+//                    completion(.success(true))
+                } else {
+                    completion(.failure(NSError(domain: "com.example.login", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data received"])))
+                }
+            }
+            
+            task.resume()
+        }
      
 }

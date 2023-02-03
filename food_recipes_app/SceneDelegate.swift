@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let scene = scene as? UIWindowScene else {return}
         let mywindow = UIWindow(windowScene: scene)
-        let nav = UINavigationController(rootViewController: HomeTabBarViewController())
+        let nav = UINavigationController(rootViewController: SignInViewController())
         mywindow.rootViewController = nav
         self.window = mywindow
         mywindow.makeKeyAndVisible()
