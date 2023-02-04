@@ -106,13 +106,61 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 }
             }
             
+        case Sections.IndianFoods.rawValue:
+            
+            API.shared.getIndianFoodData { result in
+                switch result {
+                case.success(let foodcuisine):
+                    cell.configure(with: foodcuisine)
+                case.failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
             
             
-//        case Sections.IndianFoods.rawValue
-//        case Sections.ItalianFoods.rawValue
-//        case Sections.JapaneseFoods.rawValue
-//        case Sections.ThaiFoods.rawValue
-//        case Sections.AmericanFoods.rawValue
+        case Sections.ItalianFoods.rawValue:
+            
+            API.shared.getItalianFoodData { result in
+                switch result {
+                case.success(let foodcuisine):
+                    cell.configure(with: foodcuisine)
+                case.failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+            
+        case Sections.JapaneseFoods.rawValue:
+            
+            API.shared.getJapaneseFoodData { result in
+                switch result {
+                case.success(let foodcuisine):
+                    cell.configure(with: foodcuisine)
+                case.failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+            
+        case Sections.ThaiFoods.rawValue:
+            
+            API.shared.getThaiFoodData { result in
+                switch result {
+                case.success(let foodcuisine):
+                    cell.configure(with: foodcuisine)
+                case.failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        case Sections.AmericanFoods.rawValue:
+            
+            API.shared.getAmericanFoodData { result in
+                switch result {
+                case.success(let foodcuisine):
+                    cell.configure(with: foodcuisine)
+                case.failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+            
         default:
             return UITableViewCell()
         }

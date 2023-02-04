@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13E7D5BE298E3D12004EFA47 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 13E7D5BD298E3D12004EFA47 /* Alamofire */; };
+		13E7D5C0298E4177004EFA47 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E7D5BF298E4177004EFA47 /* SignUpViewController.swift */; };
 		AD72566E2980610C00151C54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD72566D2980610C00151C54 /* AppDelegate.swift */; };
 		AD7256702980610C00151C54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD72566F2980610C00151C54 /* SceneDelegate.swift */; };
 		AD7256722980610C00151C54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7256712980610C00151C54 /* ViewController.swift */; };
@@ -31,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13E7D5BF298E4177004EFA47 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		AD72566A2980610C00151C54 /* Tasty Foods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tasty Foods.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD72566D2980610C00151C54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD72566F2980610C00151C54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13E7D5BE298E3D12004EFA47 /* Alamofire in Frameworks */,
 				C1DAD546298C96E400C2A62C /* SDWebImageMapKit in Frameworks */,
 				C1DAD544298C96E400C2A62C /* SDWebImage in Frameworks */,
 			);
@@ -110,6 +114,7 @@
 				ADE16A062987BBC300976A5A /* SearchViewController.swift */,
 				ADE16A082987BC1F00976A5A /* ProfileViewController.swift */,
 				ADE16A142987D36F00976A5A /* SignInViewController.swift */,
+				13E7D5BF298E4177004EFA47 /* SignUpViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 			packageProductDependencies = (
 				C1DAD543298C96E400C2A62C /* SDWebImage */,
 				C1DAD545298C96E400C2A62C /* SDWebImageMapKit */,
+				13E7D5BD298E3D12004EFA47 /* Alamofire */,
 			);
 			productName = food_recipes_app;
 			productReference = AD72566A2980610C00151C54 /* Tasty Foods.app */;
@@ -200,6 +206,7 @@
 			mainGroup = AD7256612980610C00151C54;
 			packageReferences = (
 				C1DAD542298C96E400C2A62C /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				13E7D5BC298E3D12004EFA47 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = AD72566B2980610C00151C54 /* Products */;
 			projectDirPath = "";
@@ -233,6 +240,7 @@
 				ADE4B1B429896E7C002C4A97 /* Title.swift in Sources */,
 				AD7256722980610C00151C54 /* ViewController.swift in Sources */,
 				ADE16A012987B82000976A5A /* HomeTabBarViewController.swift in Sources */,
+				13E7D5C0298E4177004EFA47 /* SignUpViewController.swift in Sources */,
 				AD72566E2980610C00151C54 /* AppDelegate.swift in Sources */,
 				C192C79F298D05AF001A442E /* User.swift in Sources */,
 				ADE4707B298ADFC500B0EFA0 /* FoodTitleCollectionViewCell.swift in Sources */,
@@ -433,6 +441,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		13E7D5BC298E3D12004EFA47 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		C1DAD542298C96E400C2A62C /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
@@ -444,6 +460,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		13E7D5BD298E3D12004EFA47 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 13E7D5BC298E3D12004EFA47 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		C1DAD543298C96E400C2A62C /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C1DAD542298C96E400C2A62C /* XCRemoteSwiftPackageReference "SDWebImage" */;

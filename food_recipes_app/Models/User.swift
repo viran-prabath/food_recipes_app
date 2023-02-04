@@ -14,7 +14,6 @@ struct UserDataModels: Codable {
     let last_name: String?
     let email: String?
     let password: String?
-    let imageUrl: String?
     let isActive: Bool
     let createdDateTime: String
     
@@ -24,7 +23,6 @@ struct UserDataModels: Codable {
         case last_name
         case email
         case password
-        case imageUrl
         case isActive
         case createdDateTime
     }

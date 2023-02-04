@@ -14,6 +14,8 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         
+        //let sessionID = userid
+       // print("User ID: \(sessionID)")
     }
     
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SignInViewController: UIViewController {
 
@@ -74,7 +75,7 @@ class SignInViewController: UIViewController {
             btn.layer.borderWidth = 1
             btn.layer.borderColor = UIColor.black.cgColor
             //btn.frame = CGRect(x: 10, y: 50, width: 100, height: 30)
-            btn.addTarget(self, action: #selector(pressed), for: .touchUpInside)
+            btn.addTarget(self, action: #selector(loginAction), for: .touchUpInside)
             return btn
         }()
     
@@ -97,7 +98,41 @@ class SignInViewController: UIViewController {
         }()
     
     
-       
+//    @objc func logind() {
+//
+//
+//            if txtusername.text?.isEmpty == true || txtpassword.text?.isEmpty == true
+//            {
+//                let alert = UIAlertController(title: "Warning", message: "Username or Password is empty", preferredStyle: .alert)
+//                let action = UIAlertAction (title: "OK", style: .default, handler: nil)
+//                alert.addAction(action)
+//                self.present(alert, animated: true, completion: nil)
+//            }
+//            else
+//            {
+//
+//
+//            }
+//
+//        }
+    
+    @objc func loginAction()
+    {
+        guard let email = txtusername.text, let password = txtpassword.text else {return}
+        
+        let parameters: [String: Any] = ["email": "\(email)", "password": "\(password)"]
+        
+        AF.request("https://starlit-salamander-3b2fd0.netlify.app/api/user/userdata", method: .post, parameters: parameters).responseJSON{
+            response in
+            
+            switch response.result{
+            case.success(let value):
+                print(value)
+            case.failure(let error):
+                print(error)
+            }
+        }
+    }
         
            @objc func pressed() {
             let alert = UIAlertController(title: "Alert", message: "Hi Foodies", preferredStyle: UIAlertController.Style.alert)
@@ -106,7 +141,7 @@ class SignInViewController: UIViewController {
            }
     
             @objc func goToNextPage() {
-                    let signUp = ProfileViewController()
+                    let signUp = SignUpViewController()
                     show(signUp, sender: self)
                 }
             
@@ -126,7 +161,7 @@ class SignInViewController: UIViewController {
             override func viewDidLoad() {
                 super.viewDidLoad()
                 self.view.backgroundColor = .white
-                assignbackground()
+                //assignbackground()
                 let apperence = UINavigationBarAppearance()
                 apperence.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
                 navigationItem.standardAppearance = apperence
