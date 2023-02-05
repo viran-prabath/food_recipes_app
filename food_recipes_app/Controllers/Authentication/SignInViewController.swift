@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class SignInViewController: UIViewController {
 
@@ -115,7 +114,7 @@ class SignInViewController: UIViewController {
         @objc func loginAction()
         {
             let email = txtusername.text!
-            let password = txtpassword.text!
+            let password = txtpassword.text!.lowercased()
             
             if (email.isEmpty == true)
             {

@@ -8,18 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		130666A3298EE00E0009A368 /* Favourite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130666A2298EE00E0009A368 /* Favourite.swift */; };
-		13E7D5BE298E3D12004EFA47 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 13E7D5BD298E3D12004EFA47 /* Alamofire */; };
+		131870EE299034D60066D278 /* SearchFoodResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131870ED299034D60066D278 /* SearchFoodResultsViewController.swift */; };
+		13B4C515298FB40A00977C02 /* FoodDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B4C514298FB40A00977C02 /* FoodDetailsViewModel.swift */; };
+		13B4C517298FB44900977C02 /* FoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B4C516298FB44900977C02 /* FoodViewModel.swift */; };
+		13B4C519298FB64B00977C02 /* FoodDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B4C518298FB64B00977C02 /* FoodDetailsViewController.swift */; };
+		13B4C51D298FB71B00977C02 /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B4C51C298FB71B00977C02 /* FoodTableViewCell.swift */; };
 		13E7D5C0298E4177004EFA47 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E7D5BF298E4177004EFA47 /* SignUpViewController.swift */; };
 		AD72566E2980610C00151C54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD72566D2980610C00151C54 /* AppDelegate.swift */; };
 		AD7256702980610C00151C54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD72566F2980610C00151C54 /* SceneDelegate.swift */; };
-		AD7256722980610C00151C54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7256712980610C00151C54 /* ViewController.swift */; };
 		AD7256772980611700151C54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD7256762980611700151C54 /* Assets.xcassets */; };
 		AD72567A2980611700151C54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD7256782980611700151C54 /* LaunchScreen.storyboard */; };
 		ADE16A012987B82000976A5A /* HomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE16A002987B82000976A5A /* HomeTabBarViewController.swift */; };
 		ADE16A032987BB4B00976A5A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE16A022987BB4B00976A5A /* HomeViewController.swift */; };
 		ADE16A052987BB9600976A5A /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE16A042987BB9600976A5A /* FavoriteViewController.swift */; };
 		ADE16A072987BBC300976A5A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE16A062987BBC300976A5A /* SearchViewController.swift */; };
-		ADE16A092987BC1F00976A5A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE16A082987BC1F00976A5A /* ProfileViewController.swift */; };
 		ADE16A0C2987C00900976A5A /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE16A0B2987C00900976A5A /* CollectionViewTableViewCell.swift */; };
 		ADE16A0E2987D12700976A5A /* TableHeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE16A0D2987D12700976A5A /* TableHeaderUIView.swift */; };
 		ADE16A132987D2C900976A5A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE16A122987D2C900976A5A /* Extensions.swift */; };
@@ -34,11 +36,15 @@
 
 /* Begin PBXFileReference section */
 		130666A2298EE00E0009A368 /* Favourite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favourite.swift; sourceTree = "<group>"; };
+		131870ED299034D60066D278 /* SearchFoodResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFoodResultsViewController.swift; sourceTree = "<group>"; };
+		13B4C514298FB40A00977C02 /* FoodDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailsViewModel.swift; sourceTree = "<group>"; };
+		13B4C516298FB44900977C02 /* FoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewModel.swift; sourceTree = "<group>"; };
+		13B4C518298FB64B00977C02 /* FoodDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailsViewController.swift; sourceTree = "<group>"; };
+		13B4C51C298FB71B00977C02 /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
 		13E7D5BF298E4177004EFA47 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		AD72566A2980610C00151C54 /* Tasty Foods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tasty Foods.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD72566D2980610C00151C54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD72566F2980610C00151C54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AD7256712980610C00151C54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AD7256762980611700151C54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD7256792980611700151C54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD72567B2980611700151C54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,7 +52,6 @@
 		ADE16A022987BB4B00976A5A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		ADE16A042987BB9600976A5A /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		ADE16A062987BBC300976A5A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		ADE16A082987BC1F00976A5A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		ADE16A0B2987C00900976A5A /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		ADE16A0D2987D12700976A5A /* TableHeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderUIView.swift; sourceTree = "<group>"; };
 		ADE16A122987D2C900976A5A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -62,7 +67,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13E7D5BE298E3D12004EFA47 /* Alamofire in Frameworks */,
 				C1DAD546298C96E400C2A62C /* SDWebImageMapKit in Frameworks */,
 				C1DAD544298C96E400C2A62C /* SDWebImage in Frameworks */,
 			);
@@ -71,6 +75,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13B4C510298FB25800977C02 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				13E7D5BF298E4177004EFA47 /* SignUpViewController.swift */,
+				ADE16A142987D36F00976A5A /* SignInViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		13B4C511298FB26500977C02 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				13B4C518298FB64B00977C02 /* FoodDetailsViewController.swift */,
+				131870ED299034D60066D278 /* SearchFoodResultsViewController.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		13B4C512298FB26E00977C02 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				ADE16A022987BB4B00976A5A /* HomeViewController.swift */,
+				ADE16A042987BB9600976A5A /* FavoriteViewController.swift */,
+				ADE16A062987BBC300976A5A /* SearchViewController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		13B4C513298FB3AF00977C02 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				13B4C514298FB40A00977C02 /* FoodDetailsViewModel.swift */,
+				13B4C516298FB44900977C02 /* FoodViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		AD7256612980610C00151C54 = {
 			isa = PBXGroup;
 			children = (
@@ -90,14 +131,12 @@
 		AD72566C2980610C00151C54 /* food_recipes_app */ = {
 			isa = PBXGroup;
 			children = (
+				13B4C513298FB3AF00977C02 /* ViewModels */,
 				ADE4B1B229896E66002C4A97 /* Models */,
 				ADE4B1AF298968A8002C4A97 /* Managers */,
 				ADE16A0F2987D24F00976A5A /* Resources */,
 				ADE16A0A2987BF5F00976A5A /* Views */,
 				ADE169FF2987B68300976A5A /* Controllers */,
-				AD72566D2980610C00151C54 /* AppDelegate.swift */,
-				AD72566F2980610C00151C54 /* SceneDelegate.swift */,
-				AD7256712980610C00151C54 /* ViewController.swift */,
 				AD7256762980611700151C54 /* Assets.xcassets */,
 				AD7256782980611700151C54 /* LaunchScreen.storyboard */,
 				AD72567B2980611700151C54 /* Info.plist */,
@@ -109,12 +148,9 @@
 		ADE169FF2987B68300976A5A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				ADE16A022987BB4B00976A5A /* HomeViewController.swift */,
-				ADE16A042987BB9600976A5A /* FavoriteViewController.swift */,
-				ADE16A062987BBC300976A5A /* SearchViewController.swift */,
-				ADE16A082987BC1F00976A5A /* ProfileViewController.swift */,
-				ADE16A142987D36F00976A5A /* SignInViewController.swift */,
-				13E7D5BF298E4177004EFA47 /* SignUpViewController.swift */,
+				13B4C512298FB26E00977C02 /* Core */,
+				13B4C511298FB26500977C02 /* General */,
+				13B4C510298FB25800977C02 /* Authentication */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -125,6 +161,7 @@
 				ADE16A0B2987C00900976A5A /* CollectionViewTableViewCell.swift */,
 				ADE16A0D2987D12700976A5A /* TableHeaderUIView.swift */,
 				ADE4707A298ADFC500B0EFA0 /* FoodTitleCollectionViewCell.swift */,
+				13B4C51C298FB71B00977C02 /* FoodTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -132,6 +169,8 @@
 		ADE16A0F2987D24F00976A5A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AD72566F2980610C00151C54 /* SceneDelegate.swift */,
+				AD72566D2980610C00151C54 /* AppDelegate.swift */,
 				ADE16A122987D2C900976A5A /* Extensions.swift */,
 			);
 			path = Resources;
@@ -174,7 +213,6 @@
 			packageProductDependencies = (
 				C1DAD543298C96E400C2A62C /* SDWebImage */,
 				C1DAD545298C96E400C2A62C /* SDWebImageMapKit */,
-				13E7D5BD298E3D12004EFA47 /* Alamofire */,
 			);
 			productName = food_recipes_app;
 			productReference = AD72566A2980610C00151C54 /* Tasty Foods.app */;
@@ -206,7 +244,6 @@
 			mainGroup = AD7256612980610C00151C54;
 			packageReferences = (
 				C1DAD542298C96E400C2A62C /* XCRemoteSwiftPackageReference "SDWebImage" */,
-				13E7D5BC298E3D12004EFA47 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = AD72566B2980610C00151C54 /* Products */;
 			projectDirPath = "";
@@ -235,21 +272,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADE47074298AD3A600B0EFA0 /* Foods.swift in Sources */,
+				131870EE299034D60066D278 /* SearchFoodResultsViewController.swift in Sources */,
 				ADE16A032987BB4B00976A5A /* HomeViewController.swift in Sources */,
 				ADE16A072987BBC300976A5A /* SearchViewController.swift in Sources */,
-				AD7256722980610C00151C54 /* ViewController.swift in Sources */,
 				ADE16A012987B82000976A5A /* HomeTabBarViewController.swift in Sources */,
 				13E7D5C0298E4177004EFA47 /* SignUpViewController.swift in Sources */,
+				13B4C515298FB40A00977C02 /* FoodDetailsViewModel.swift in Sources */,
 				AD72566E2980610C00151C54 /* AppDelegate.swift in Sources */,
+				13B4C519298FB64B00977C02 /* FoodDetailsViewController.swift in Sources */,
 				C192C79F298D05AF001A442E /* User.swift in Sources */,
 				ADE4707B298ADFC500B0EFA0 /* FoodTitleCollectionViewCell.swift in Sources */,
 				130666A3298EE00E0009A368 /* Favourite.swift in Sources */,
+				13B4C51D298FB71B00977C02 /* FoodTableViewCell.swift in Sources */,
 				ADE16A0C2987C00900976A5A /* CollectionViewTableViewCell.swift in Sources */,
 				ADE16A0E2987D12700976A5A /* TableHeaderUIView.swift in Sources */,
 				ADE16A052987BB9600976A5A /* FavoriteViewController.swift in Sources */,
+				13B4C517298FB44900977C02 /* FoodViewModel.swift in Sources */,
 				ADE4B1B1298968EC002C4A97 /* API.swift in Sources */,
 				ADE16A152987D36F00976A5A /* SignInViewController.swift in Sources */,
-				ADE16A092987BC1F00976A5A /* ProfileViewController.swift in Sources */,
 				ADE16A132987D2C900976A5A /* Extensions.swift in Sources */,
 				AD7256702980610C00151C54 /* SceneDelegate.swift in Sources */,
 			);
@@ -441,14 +481,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		13E7D5BC298E3D12004EFA47 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 		C1DAD542298C96E400C2A62C /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
@@ -460,11 +492,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		13E7D5BD298E3D12004EFA47 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 13E7D5BC298E3D12004EFA47 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
 		C1DAD543298C96E400C2A62C /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C1DAD542298C96E400C2A62C /* XCRemoteSwiftPackageReference "SDWebImage" */;

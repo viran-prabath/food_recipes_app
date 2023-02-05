@@ -8,10 +8,14 @@
 
 import UIKit
 
+protocol CollectionViewTableViewCellDelegate: AnyObject {
+    func collectionViewTableViewCellDidTapCell(_ cell: CollectionViewTableViewCell, viewModel: FoodsDetailsViewModels)
+}
+
 class CollectionViewTableViewCell: UITableViewCell {
 
-    static let Identifier = "CollectionViewTableCell"
-    
+    static let identifier = "CollectionViewTableCell"
+    weak var delegate: CollectionViewTableViewCellDelegate?
     private var foodtitle: [FoodsDataModels] = [FoodsDataModels]()
         
     private let collectionView: UICollectionView = {
@@ -19,7 +23,6 @@ class CollectionViewTableViewCell: UITableViewCell {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 140, height: 200)
         layout.scrollDirection = .horizontal
-        
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(FoodTitleCollectionViewCell.self, forCellWithReuseIdentifier: FoodTitleCollectionViewCell.identifier)
         return collectionView
@@ -73,5 +76,36 @@ extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return foodtitle.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+        let food = foodtitle[indexPath.row]
+        guard let foodId = food.foodId else {
+            return
+        }
+
+
+        API.shared.getSelectedFood(with: foodId ) { [weak self] result in
+            switch result {
+            case .success( _ ):
+
+                let food = self?.foodtitle[indexPath.row]
+                guard (food?.foodId) != nil else {
+                    return
+                }
+                guard let strongSelf = self else {
+                    return
+                }
+                let viewModel = FoodsDetailsViewModels(foodId: food?.foodId ?? "", name: food?.name ?? "", imageUrl: food?.imageUrl ?? "", cuisine: food?.cuisine ?? "", description: food?.description ?? "", calories: food?.calories ?? "", carbohydrates: food?.carbohydrates ?? "", fat: food?.fat ?? "", protein: food?.protein ?? "", sugar: food?.sugar ?? "", ingredient: food?.ingredient ?? "")
+                self?.delegate?.collectionViewTableViewCellDidTapCell(strongSelf, viewModel: viewModel)
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+
+        }
+        
     }
 }

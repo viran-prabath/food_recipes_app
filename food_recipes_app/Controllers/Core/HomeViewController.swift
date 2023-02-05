@@ -24,7 +24,7 @@ let SectionTitleNames: [String] = ["Chinese Foods", "Indian Foods", "Italian Foo
     
     private let HomeDataTable: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
-        table.register(CollectionViewTableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.Identifier)
+        table.register(CollectionViewTableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
         return table
     }()
     
@@ -49,6 +49,9 @@ let SectionTitleNames: [String] = ["Chinese Foods", "Indian Foods", "Italian Foo
         return content
     }()
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -62,10 +65,18 @@ let SectionTitleNames: [String] = ["Chinese Foods", "Indian Foods", "Italian Foo
         HomeDataTable.tableHeaderView = headerView
     }
     
+    
+    
     private func configureNavBar(){
-        var image = UIImage(named: "icon2")
-        image = image?.withRenderingMode(.alwaysOriginal)
-        navigationItem.backBarButtonItem = UIBarButtonItem(image: image, style: .done, target: self, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logOutButtonTapped))
+    }
+    
+    @objc func logOutButtonTapped(){
+        UserDefaults.standard.removeObject(forKey: "userID")
+        let signInBarViewController = SignInViewController()
+        UIView.transition(with: UIApplication.shared.windows.first!, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+            UIApplication.shared.windows.first?.rootViewController = signInBarViewController
+        }, completion: nil)
     }
     
     override func viewDidLayoutSubviews() {
@@ -88,14 +99,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionViewTableViewCell.Identifier, for: indexPath) as? CollectionViewTableViewCell else {
-                   return UITableViewCell()
-               }
+
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionViewTableViewCell.identifier, for: indexPath) as? CollectionViewTableViewCell else {
+            return UITableViewCell()
+        }
         
+        cell.delegate = self
+
         switch indexPath.section {
             
         case Sections.ChineseFoods.rawValue:
-            
+                    
             API.shared.getChineseFoodData { result in
                 switch result {
                 case.success(let foodcuisine):
@@ -159,7 +173,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                     print(error.localizedDescription)
                 }
             }
-            
         default:
             return UITableViewCell()
         }
@@ -191,5 +204,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let offset = scrollView.contentOffset.y + defaultOffset
         
         navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offset))
+    }
+}
+
+extension HomeViewController: CollectionViewTableViewCellDelegate {
+    func collectionViewTableViewCellDidTapCell(_ cell: CollectionViewTableViewCell, viewModel: FoodsDetailsViewModels) {
+        DispatchQueue.main.async { [weak self] in
+            let vc = FoodDetailsViewController()
+            vc.configure(with: viewModel)
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }

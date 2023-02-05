@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class SignUpViewController: UIViewController {
     
@@ -164,7 +163,7 @@ class SignUpViewController: UIViewController {
        let fname = txtfname.text!
        let lname = txtlname.text!
        let email = txtemail.text!
-       let password = txtpassword.text!
+        let password = txtpassword.text!.lowercased()
         
         if(fname.isEmpty == true)
         {

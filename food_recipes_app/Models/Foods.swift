@@ -9,9 +9,9 @@
 import Foundation
 
 struct FoodsDataModels: Codable {
+    let id: String?
     let foodId: String?
     let name: String?
-    let imageUrl: String?
     let cuisine: String?
     let description: String?
     let calories: String?
@@ -20,13 +20,14 @@ struct FoodsDataModels: Codable {
     let protein: String?
     let sugar: String?
     let ingredient: String?
-    let isActive: Bool
-    let createdDateTime: String
-    
+    let imageUrl: String?
+    let isActive: Bool?
+    let createdDateTime: String?
+
     enum CodingKeys: String, CodingKey,Codable {
+        case id
         case foodId
         case name
-        case imageUrl
         case cuisine
         case description
         case calories
@@ -35,6 +36,7 @@ struct FoodsDataModels: Codable {
         case protein
         case sugar
         case ingredient
+        case imageUrl
         case isActive
         case createdDateTime
         
