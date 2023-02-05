@@ -18,6 +18,20 @@ class TableHeaderUIView: UIView {
         return imageView
     }()
     
+    private let Label: UILabel = {
+         let Label = UILabel()
+         Label.text = "Tasty Foods"
+         Label.textAlignment = .center
+         Label.textColor = .yellow
+         Label.shadowColor = UIColor.black
+         Label.shadowOffset = CGSize(width: 2, height: 2)
+         Label.font = UIFont(name: "Hoefler", size: CGFloat(36))
+         
+         Label.font = .systemFont(ofSize: 36, weight: .bold)
+         Label.translatesAutoresizingMaskIntoConstraints = false
+        return Label
+     }()
+    
     private func addGradient(){
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [
@@ -31,7 +45,11 @@ class TableHeaderUIView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(TableImageView)
-        addGradient()
+        TableImageView.addSubview(Label)
+        Label.centerXAnchor.constraint(equalTo: TableImageView.centerXAnchor).isActive = true
+        Label.centerYAnchor.constraint(equalTo: TableImageView.centerYAnchor, constant: -120).isActive = true
+        //Label.leftAnchor.constraint(equalTo: TableImageView.leftAnchor).isActive = true
+//        addGradient()
     }
     
     override func layoutSubviews() {

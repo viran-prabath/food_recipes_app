@@ -53,7 +53,6 @@ let SectionTitleNames: [String] = ["Chinese Foods", "Indian Foods", "Italian Foo
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         view.addSubview(HomeDataTable)
-        
         HomeDataTable.delegate = self
         HomeDataTable.dataSource = self
         configureNavBar()
@@ -66,7 +65,7 @@ let SectionTitleNames: [String] = ["Chinese Foods", "Indian Foods", "Italian Foo
     private func configureNavBar(){
         var image = UIImage(named: "icon2")
         image = image?.withRenderingMode(.alwaysOriginal)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .done, target: self, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(image: image, style: .done, target: self, action: nil)
     }
     
     override func viewDidLayoutSubviews() {

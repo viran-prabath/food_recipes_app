@@ -133,13 +133,13 @@ class API {
         task.resume()
     }
     
-    static func signUp(userid: String, fname: String, lname:String, email: String, password: String, completion: @escaping (Result<Void, Error>) -> Void) {
+    static func signUp(fname: String, lname:String, email: String, password: String, completion: @escaping (Result<Void, Error>) -> Void) {
             // Build the API request
             let url = URL(string: "https://starlit-salamander-3b2fd0.netlify.app/api/user")!
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            let parameters = ["userId": userid, "first_name": fname, "last_name": lname, "email": email, "password": password]
+            let parameters = ["first_name": fname, "last_name": lname, "email": email, "password": password]
             request.httpBody = try! JSONSerialization.data(withJSONObject: parameters)
 
             // Send the request
@@ -148,20 +148,69 @@ class API {
                     completion(.failure(error))
                     return
                 }
-                do {
-                        // Parse the response
-                        let statusCode = (response as! HTTPURLResponse).statusCode
-                        
-                        print("Status Code:\(statusCode)")
-                        
-                        if statusCode >= 200 && statusCode < 300 {
-                            completion(.success(()))
-                        } else {
-                            let error = NSError(domain: "API", code: statusCode, userInfo: nil)
-                            completion(.failure(error))
-                        }
+                
+                if let data = data {
+                    do {
+                            let statusCode = (response as! HTTPURLResponse).statusCode
+                            if statusCode >= 200 && statusCode < 300 {
+                                completion(.success(()))
+                                print("Status Code:\(statusCode)")
+                                let UID: String = String(data: data, encoding: .utf8)!
+                                let originalString = "\"\(UID)\""
+                                let modifiedString = originalString.replacingOccurrences(of: "\"", with: "")
+                                UserDefaults.standard.set(modifiedString, forKey: "userID")
+                            } else {
+                                let error = NSError(domain: "API", code: statusCode, userInfo: nil)
+                                completion(.failure(error))
+                            }
+                    }
+                    catch{print("error")}
                 }
-                catch{print("error")}
+                
+                
+            }
+            task.resume()
+        }
+    
+    
+    static func login(email: String, password: String, completion: @escaping (Result<Void, Error>) -> Void) {
+            // Build the API request
+            let url = URL(string: "https://starlit-salamander-3b2fd0.netlify.app/api/user/userdata")!
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            let parameters = ["email": email, "password": password]
+            request.httpBody = try! JSONSerialization.data(withJSONObject: parameters)
+
+            // Send the request
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    completion(.failure(error))
+                    return
+                }
+                
+                if let data = data {
+                    do {
+                            // Parse the response
+                            let statusCode = (response as! HTTPURLResponse).statusCode
+                            if statusCode >= 200 && statusCode < 300 {
+                                completion(.success(()))
+                                print("Status Code:\(statusCode)")
+                                let UID: String = String(data: data, encoding: .utf8)!
+                                let originalString = "\"\(UID)\""
+                                let modifiedString = originalString.replacingOccurrences(of: "\"", with: "")
+                                UserDefaults.standard.set(modifiedString, forKey: "userID")
+                            } else {
+                                let error = NSError(domain: "API", code: statusCode, userInfo: nil)
+                                completion(.failure(error))
+                            }
+                    }
+                    catch{print("error")}
+                    
+                    return
+                }
+                
+                
             }
             task.resume()
         }
